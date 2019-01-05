@@ -58,13 +58,13 @@ namespace TicTacToe
 
             Console.WriteLine(" _________________");
             Console.WriteLine("|     |     |     |");
-            Console.WriteLine("|  {0}  |  {1}  |  {2}  |", one, two, three);
+            Console.WriteLine("|  {0}  |  {1}  |  {2}  |", seven, eight, nine);
             Console.WriteLine("|_____|_____|_____|");
             Console.WriteLine("|     |     |     |");
             Console.WriteLine("|  {0}  |  {1}  |  {2}  |", four, five, six);
             Console.WriteLine("|_____|_____|_____|");
             Console.WriteLine("|     |     |     |");
-            Console.WriteLine("|  {0}  |  {1}  |  {2}  |", seven, eight, nine);
+            Console.WriteLine("|  {0}  |  {1}  |  {2}  |", one, two, three);
             Console.WriteLine("|_____|_____|_____|");
         }
 

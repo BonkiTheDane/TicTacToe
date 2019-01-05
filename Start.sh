@@ -1,1 +1,0 @@
-start ./TicTacToe.dll/bin/Debug/netcoreapp2.1/TicTacToe.dll

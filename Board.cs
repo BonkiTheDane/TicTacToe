@@ -22,6 +22,7 @@ namespace TicTacToe
             string eight = "8";
             string nine = "9";
 
+
             for (int x = 0; x < posistions.Length; x++)
             {
                 switch (x)

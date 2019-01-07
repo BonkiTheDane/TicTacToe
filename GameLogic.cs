@@ -20,6 +20,7 @@ namespace TicTacToe
 
         public static bool Winner(string[] list, int round)
         {
+            int isFull = 0;
             bool gameRunning = true;
             if (round > 0)
             {
@@ -33,7 +34,7 @@ namespace TicTacToe
                 string eight = list[7];
                 string nine = list[8];
 
-                for (int x = 0; x < 8; x++)
+                for (int x = 0; x <= 9; x++)
                 {
                     switch (x)
                     {
@@ -83,6 +84,13 @@ namespace TicTacToe
                         case 8:
                             if (three == "X" && five == "X" && seven == "X") { Console.WriteLine("Player one wins"); gameRunning = false; }
                             if (three == "O" && five == "O" && seven == "O") { Console.WriteLine("Player two wins"); gameRunning = false; }
+                            break;
+                        case 9:
+                            foreach(string str in list)
+                            {
+                                if (str == "X" || str == "O") isFull++;
+                            }
+                            if (isFull == 9) { Console.WriteLine("Stalemate"); gameRunning = false; }
                             break;
                     }
 

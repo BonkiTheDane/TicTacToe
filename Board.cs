@@ -12,17 +12,18 @@ namespace TicTacToe
 
         public void Update(string[] posistions)
         {
-            string one = "1";
-            string two = "2";
-            string three = "3";
-            string four = "4";
-            string five = "5";
-            string six = "6";
-            string seven = "7";
-            string eight = "8";
-            string nine = "9";
+            //Defining game posistion variables
+            string one = "";
+            string two = "";
+            string three = "";
+            string four = "";
+            string five = "";
+            string six = "";
+            string seven = "";
+            string eight = "";
+            string nine = "";
 
-
+            //Taking X and O posistions from array and defining them to a variable
             for (int x = 0; x < posistions.Length; x++)
             {
                 switch (x)
@@ -57,6 +58,7 @@ namespace TicTacToe
                 }
             }
 
+            //Displays board and current player X/O posistions
             Console.WriteLine(" _________________");
             Console.WriteLine("|     |     |     |");
             Console.WriteLine("|  {0}  |  {1}  |  {2}  |", seven, eight, nine);

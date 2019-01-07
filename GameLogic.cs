@@ -20,10 +20,14 @@ namespace TicTacToe
 
         public static bool Winner(string[] list, int round)
         {
-            int isFull = 0;
+
+            //is equal to false if any game ending conditions are true
             bool gameRunning = true;
+
+            //Only check win conditions in case atleast one round has been played
             if (round > 0)
             {
+                //defines each element of list to an easily readable variable
                 string one = list[0];
                 string two = list[1];
                 string three = list[2];
@@ -34,6 +38,9 @@ namespace TicTacToe
                 string eight = list[7];
                 string nine = list[8];
 
+                //used to check if board is full
+                int isFull = 0;
+                //Checks if any win conditions are true
                 for (int x = 0; x <= 9; x++)
                 {
                     switch (x)
@@ -85,6 +92,8 @@ namespace TicTacToe
                             if (three == "X" && five == "X" && seven == "X") { Console.WriteLine("Player one wins"); gameRunning = false; }
                             if (three == "O" && five == "O" && seven == "O") { Console.WriteLine("Player two wins"); gameRunning = false; }
                             break;
+
+                        //Checks if the game is in a stalemate
                         case 9:
                             foreach(string str in list)
                             {
@@ -99,6 +108,7 @@ namespace TicTacToe
             return gameRunning;
         }
 
+        //places X or O in player chosen posistion
         public static string[] Move(string[] list, Board board)
         {
             bool isTaken = true;
@@ -106,28 +116,34 @@ namespace TicTacToe
             board.Update(list);
             int chosen = 0;
 
+            //Only two players mean that every other round it will be player 2, round 0 = player 1, round 2 = player 2.
             if (round % 2 == 0) Console.WriteLine("Player two turn - Choose your move");
             else Console.WriteLine("Player one turn - Choose your move");
 
-
+            //This is repeated as long as the field chosen by a player is already taken
             do
             {
                 try
                 {
                     if (round % 2 == 0)
                     {
+                        //userinput variable
                         chosen = Int32.Parse(Console.ReadLine()) - 1;
+
+                        //checks if posistion is already taken
                         isTaken = IsTaken(chosen, list);
                         if (isTaken == false) list[chosen] = "O";
                         else Console.WriteLine("Square already occupied");
                     }
                     else
                     {
+                        //repeat of above, but for player 2
                         chosen = Int32.Parse(Console.ReadLine()) - 1;
                         isTaken = IsTaken(chosen, list);
                         if (isTaken == false) list[chosen] = "X";
                         else Console.WriteLine("Square already occupied");
                     }
+                    //if what the player has chosen is outside of list's index, it will do the catch
                 } catch { Console.WriteLine("use numbers 1 to 9"); };
             } while (isTaken == true);
             return list;

@@ -39,7 +39,7 @@ namespace TicTacToe
         {
             
             Board board = new Board();
-            //array (poorly named list) has a value for each posistion on the 3x3 board
+            //array (lazily named list) has a value for each posistion on the 3x3 board
             string[] list = { " ", " ", " ", " ", " ", " ", " ", " ", " " };
             int round = 0;
 
